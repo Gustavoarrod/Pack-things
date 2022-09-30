@@ -48,9 +48,15 @@ VALUES (124, ' irineu ', ' Rua irineu ', ' 61234-597 ', ' 987.654.321 ', ' irine
 SELECT * FROM Tecnico
 WHERE (CodTecnico = 124);
 
-INSERT INTO Pedido SELECT * FROM CLiente
-VALUES (CodCliente);
+INSERT INTO Pedido 
+(CodCliente)
+SELECT CodCliente
+FROM Cliente;
+
+INSERT INTO Pedido 
+(CodTecnico)
+SELECT CodTecnico
+FROM Tecnico;
 
 SELECT * FROM Pedido;
-
 
